@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="page-header">
+    <h1>我们需要您的建议 <small>我们会尽全力查看每一条建议</small></h1>
+  </div>
+
+  <%= form_for :suggestion, url: suggestions_path do |f| %>
+  <!--
+      <p>
+	<%= f.label :title %><br>
+	<%= f.text_field :title %>
+      </p>
+
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+  -->
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">概要*</span>
+    <%= f.text_field :summary, :class => "form-control", :placeholder => "Enter Summary" %>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon2">邮箱*</span>
+    <%= f.email_field :email, :class => "form-control", :placeholder => "Enter Email" %>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon3">详细描述</span>
+    <%= f.text_area :describe, :class => "form-control" %>
+  </div>
+  
+  <p>
+    <%= f.submit :value => '提交' %>
+  </p>
+<% end %>
+</div>

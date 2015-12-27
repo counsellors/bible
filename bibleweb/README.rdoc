@@ -6,12 +6,16 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+ruby >= 2.0.0
 
 * System dependencies
+mysql
+bundler
 
 * Configuration
 
 * Database creation
+create database bible;
 
 * Database initialization
 
@@ -20,6 +24,9 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+before start, set config/database.yml
+if deploy on apache, use passenger. 
+other wise just use rails server
 
 * ...
 

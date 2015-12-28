@@ -2,9 +2,12 @@
   <div class="container-fluid">
     <!-- brand -->
     <div class="navbar-header">
+      <%= link_to image_tag("logo.jpeg", :alt => "Brand", :style => "max-width:60px;"), root_path, :class => "navbar-brand" %>
+      <!--
       <a class="navbar-brand" href="#">
 	<%= image_tag("logo.jpeg", :alt => "Brand", :style => "max-width:60px;") %>
       </a>
+      -->
       <button type="button" class="navbar-toggle" data-toggle="collapse"
 	      data-target="#bs-example-navbar-collapse-1">
 	<span class="sr-only">切换导航</span>
@@ -17,8 +20,8 @@
     <!-- right link-->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-	<li> <a class="about-li nav-li" href="#about">About</a></li>
-	<li> <a class="support-li nav-li" href="#about">Support</a></li>
+	<li> <%= link_to "About", welcome_about_path, :class => "about-li nav-li" %></li>
+	<!-- <li> <a class="support-li nav-li" href="#support">Support</a></li> -->
 	<li> <%= link_to "Suggest", new_suggestion_path, :class => "suggest-li nav-li" %></li>
       </ul>
     </div>

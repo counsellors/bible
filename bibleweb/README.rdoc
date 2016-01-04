@@ -53,6 +53,8 @@ Install
    - 安装mysql
    - 安装bibleweb该项目需要的组件，项目目录下有Gemfile,直接在根目录下执行bundle install。一般都
    能成功，如果mysql组件出错，你可能需要安装类似libmysqldev的系统包。
+   + 如果是mac， 安装该死的nokogiri时请尝试
+	sudo env ARCHFLAGS="-arch x86_64" gem install nokogiri  -n /usr/local/bin -- --with-xml=/usr/local/Cellar/libxml2/
 4. run：
    确保config/database.yml中的数据库用户和密码正确，并且可以访问。执行rake db:migrate
    在bibleweb根目录下执行rails server，或者用passenger启动 bundle exec passenger start

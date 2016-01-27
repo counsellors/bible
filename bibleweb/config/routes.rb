@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'welcome/index'
   
   get 'welcome/about'
+  get 'welcome/read'
+  get 'welcome/chapter/:ver/:short/:chapter' => 'welcome#chapter'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -33,3 +33,33 @@ other wise just use rails server
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+Install 
+1. project path:
+   https://github.com/SymphonyNo9/bible
+2. requirements:
+   ruby >= 2.2.0
+   rails >= 4.2.0
+3. install:
+   - 安装ruby，取决与你的操作系统，zypper(suse), yum(radhat), apt-get(ubuntu)
+    建议安装irb，irb之于ruby就好像ipython之于python
+   - 安装gem。ruby的包系统 https://rubygems.org/， 一般如果你的操作系统安装了ruby环境，
+   这个也会默认安的
+   - 安装bundler， gem只是包的集合，bundler 提供了解决依赖关系的管理功能，gem install bundler
+   + 如果你不能翻墙，可能你需要修改gem和bundle的源，方法参照https://ruby.taobao.org/
+   - 安装rails环境，gem install rails， 如果当中报错，很可能是因为系统的一些依赖包没有，
+   安装方法依然取决于你的操作系统，一般常见的依赖有ruby-devel, nodejs, gcc, libxml2, libxslt等
+   还有一些提示个别rails里面的组件出错，你需要gem install package 来单独调试。
+   - 安装mysql
+   - 安装bibleweb该项目需要的组件，项目目录下有Gemfile,直接在根目录下执行bundle install。一般都
+   能成功，如果mysql组件出错，你可能需要安装类似libmysqldev的系统包。
+   + 如果是mac， 安装该死的nokogiri时请尝试
+	sudo env ARCHFLAGS="-arch x86_64" gem install nokogiri  -n /usr/local/bin -- --with-xml=/usr/local/Cellar/libxml2/
+4. run：
+   确保config/database.yml中的数据库用户和密码正确，并且可以访问。执行rake db:migrate
+   在bibleweb根目录下执行rails server，或者用passenger启动 bundle exec passenger start
+   如果要在apache上部署，执行passenger-install-apache2-module，安装好有提示，照着部署就可以了
+
+5. 开发：
+   建议先过一下http://guides.ruby-china.org/getting_started.html
+   action fast，边学边做，在实践中学习是最好的
